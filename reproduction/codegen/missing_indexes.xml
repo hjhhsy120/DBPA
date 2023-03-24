@@ -1,0 +1,31 @@
+<config>
+    <name>missing_indexes</name>
+
+    <table>
+        <ncolumns>5,10,20</ncolumns>
+        <colsize>50,100</colsize>
+        <nrows>2000000,4000000</nrows>
+    </table>
+
+    <workload>
+        <bench>tpcc,tatp,voter,smallbank</bench>
+        <xml>./config/pg*_config.xml</xml>
+    </workload>
+
+    <inject type="queries">
+        <file>main.py</file>
+        <expcnt>3</expcnt>
+        <loops>
+            <nclient>5,10</nclient>
+        </loops>
+        <loop_params>ncolumns,colsize</loop_params>
+        <other_params>
+            <client_2>$nclient</client_2>
+            <tabsize>$nrows</tabsize>
+        </other_params>
+    </inject>
+
+    <sleep>900</sleep>
+</config>
+
+

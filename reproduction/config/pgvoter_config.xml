@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<parameters>
+
+    <!-- Connection details -->
+    <dbtype>postgres</dbtype>
+    <driver>org.postgresql.Driver</driver>
+    <DBUrl>jdbc:postgresql://localhost:5432/voter</DBUrl>
+    <username>postgres</username>
+    <password>postgres</password>
+    <isolation>TRANSACTION_READ_COMMITTED</isolation>
+    <uploadCode></uploadCode>
+    <uploadUrl></uploadUrl>
+    <scalefactor>10000</scalefactor>
+    
+    <!-- The workload -->
+    <terminals>64</terminals>
+    <works>
+        <work>
+          <time>600000</time>
+          <rate>unlimited</rate>
+          <weights>100</weights>
+        </work>
+    </works>
+
+    <!-- Voter Procedures declaration -->
+    <transactiontypes>
+        <transactiontype>
+                <name>Vote</name>
+        </transactiontype>
+    </transactiontypes>
+</parameters>

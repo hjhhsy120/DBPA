@@ -1,0 +1,8 @@
+1:Concurrent_Insert
+2:Missing_Indexes
+3:Heavy_Workload
+4:Vacuum
+5:Concurrent_Commit
+IO:IO_Bottleneck
+knob_shared_buffers:Small_Shared_Buffers
+manyindex:Too_Many_Indexes

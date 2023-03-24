@@ -1,0 +1,29 @@
+<config>
+    <name>concurrent_commits</name>
+    
+    <table>
+        <ncolumns>5,10,15,20</ncolumns>
+        <colsize>20,40,60,80</colsize>
+    </table>
+
+    <workload>
+        <bench>tpcc,tatp,voter,smallbank</bench>
+        <xml>./config/pg*_config.xml</xml>
+    </workload>
+
+    <inject type="queries">
+        <file>main.py</file>
+        <expcnt>3</expcnt>
+        <loops>
+            <nclient>50,100,150</nclient>
+        </loops>
+        <loop_params>ncolumns,colsize</loop_params>
+        <other_params>
+            <nclient_5>$nclient</nclient_5>
+            <nrows>1</nrows>
+        </other_params>
+    </inject>
+
+    <sleep>900</sleep>
+</config>
+

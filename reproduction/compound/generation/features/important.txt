@@ -1,0 +1,1 @@
+memory_usage_cach,system_csw,virtual_memory_minpf,postgresql_conn_Xact3,sockets_tcp,dsk_total_writ,memory_usage_free,load_avg_15m,filesystem_inodes,total_cpu_usage_idl

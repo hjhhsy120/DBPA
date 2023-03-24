@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<parameters>
+
+    <!-- Connection details -->
+    <dbtype>postgres</dbtype>
+    <driver>org.postgresql.Driver</driver>
+    <DBUrl>jdbc:postgresql://localhost:5432/tatp</DBUrl>
+    <username>postgres</username>
+    <password>postgres</password>
+    <isolation>TRANSACTION_READ_COMMITTED</isolation>
+    <uploadCode></uploadCode>
+    <uploadUrl></uploadUrl>
+        
+    <!-- Scalefactor increases the number of subscribers -->
+    <scalefactor>100</scalefactor>
+    
+    <!-- The workload -->
+    <terminals>64</terminals>
+    <works>
+        <work>
+            <time>600</time>
+            <rate>unlimited</rate>
+            <weights>2, 35, 10, 35, 2, 14, 2</weights>
+        </work>
+    </works>
+  
+	<!-- Twitter Procedures declaration -->
+    <transactiontypes>
+        <transactiontype>
+                <name>DeleteCallForwarding</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetAccessData</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetNewDestination</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetSubscriberData</name>
+        </transactiontype>
+        <transactiontype>
+                <name>InsertCallForwarding</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateLocation</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateSubscriberData</name>
+        </transactiontype>
+    </transactiontypes>
+</parameters>

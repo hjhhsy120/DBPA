@@ -1,0 +1,27 @@
+
+<config>
+    <name>small_shared_buffer</name>
+
+    <env type="knob">
+        <db>postgresql</db>
+        <knob>shared_buffers</knob>
+        <normal>16GB</normal>
+        <bad>512MB,128MB,32MB,8MB</bad>
+        <restart_cmd>
+ssh user@localhost 'bash -s' &lt;&lt;'ENDSSH'
+sleep 120
+pg_ctlcluster 12 main restart -m i
+sleep 1200
+ENDSSH
+        </restart_cmd>
+    </env>
+    
+
+    <workload>
+        <bench>tpcc,tatp,voter,smallbank</bench>
+        <xml>./expconfig/pg*_config_setknob.xml</xml>
+    </workload>
+
+    <sleep>900</sleep>
+</config>
+
