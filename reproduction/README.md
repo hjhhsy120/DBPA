@@ -18,6 +18,18 @@
   + Currently the reproduction scripts are applicable for PostgreSQL, but you can easily modify them for MySQL.
 + On the client, the OLTPBench should be installed.
 
+### Dool Preparation
+
+- Install dool (from Github) on the database server.
+- Add the following lines to `~/.bashrc` on the database server.
+
+```sh
+export DSTAT_PG_USER=postgres
+export DSTAT_PG_PWD=YOUR_PASSWORD
+export DSTAT_PG_HOST=YOUR_IP
+export DSTAT_PG_PORT=YOUR_PORT
+```
+
 ### OLTPBench Preparation
 + Set the IP, port, user, and password for the database by modifying the following files
     + create_database.py
@@ -26,7 +38,7 @@
 + Create the databases: `python create_database.py` 
 + Create the tables and insert the data: `bash load_OLTP.sh` 
 
-### Reproduction Scrips Preparation
+### Reproduction Scripts Preparation
 
 - Set the IP, port, user, and password for the database by modifying the following files
   - add_index.py
