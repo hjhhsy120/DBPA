@@ -20,7 +20,13 @@
 
 ### Dool Preparation
 
-- Install dool (from Github) on the database server.
+- Download dool on the database server.
+
+```shell
+git clone https://github.com/scottchiefbaker/dool.git
+```
+
+- Install Python3 and psycopg2.
 - Add the following lines to `~/.bashrc` on the database server.
 
 ```sh
